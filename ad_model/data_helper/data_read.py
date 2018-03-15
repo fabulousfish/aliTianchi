@@ -12,7 +12,7 @@ import pandas as pd
 current_dir = os.path.dirname(os.path.abspath(__file__))
 data_test_path = os.path.join(current_dir, "../data/test_file")
 
-def data_clean():
+def data_read():
     clean_list = [2, 3, 18]
     data = pd.read_table(data_test_path, header=None, encoding='gb2312', delim_whitespace=True)
     for list_num in clean_list:
@@ -22,7 +22,6 @@ def data_clean():
     return data_list
 
 
-
 if __name__ == '__main__':
-    data_clean()
+    data_read()
 
