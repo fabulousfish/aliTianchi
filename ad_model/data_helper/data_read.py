@@ -7,6 +7,7 @@ Date: 2018-3-15
 
 import os
 import re
+import traceback
 import pandas as pd
 
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -20,8 +21,8 @@ def data_read():
             try:
                 list_string = re.split('[:,;]', data[list_num][i])
                 data[list_num][i] = list(map(int, list_string))
-            except Exception as e:
-                print(e)
+            except :
+                traceback.print_exc()
                 print(list_num, i)
     data_list = data.T
     return data_list
